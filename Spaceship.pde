@@ -1,4 +1,3 @@
-Spaceship ship = new Spaceship();
 class Spaceship extends Floater  
 {   
   public Spaceship()
@@ -20,8 +19,15 @@ class Spaceship extends Floater
   public void hyperspace()
   {
     myXspeed=0;
+    myYspeed=0;
     myCenterX = (int)(Math.random()*600);
     myCenterY = (int)(Math.random()*600);
     myPointDirection = (int)(Math.random()*360);
+  }
+  public float getX(){
+    return (float) myCenterX;
+  }
+  public float getY(){
+    return (float) myCenterY;
   }
 }
