@@ -37,18 +37,22 @@ public void keyPressed()
   {
     if (key=='w')
     {
+      //keyW = true;
       ship.accelerate(0.5);
     }
     if (key=='a')
     {
+      //keyA = true;
       ship.turn(-10);
     }
      if (key=='s')
     {
+      //keyS = true;
       ship.accelerate(-0.5);
     }
     if (key=='d')
     {
+      //keyD = true;
       ship.turn(10);
     }
     if (key=='f')
@@ -58,9 +62,6 @@ public void keyPressed()
   }
 
 
-  ship.show();
-  ship.move();
-}
   ship.show();
   ship.move();
 }
