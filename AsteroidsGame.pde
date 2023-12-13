@@ -1,4 +1,5 @@
 Star[] gerald = new Star[30];
+ArrayList <Bullet> shoot = new ArrayList <Bullet>();
 ArrayList <Asteroid> rock = new ArrayList <Asteroid>();
 public void setup() 
 {
@@ -27,9 +28,24 @@ public void draw()
     if (distance<30){
       rock.remove(i);
     }
+    for (int j = 0; j<shoot.size(); j++)
+    {
+      float distanceb = dist(shoot.get(j).getBX(),shoot.get(j).getBY(),rock.get(i).getAX(),rock.get(i).getAY());
+      if (distanceb<25){
+      rock.remove(i);
+      shoot.remove(j);
+      j--;
+      break;
+    }
+    }
   }
   ship.show();
   ship.move();
+  for (int i = 0; i<shoot.size(); i++)
+  {
+    shoot.get(i).move();
+    shoot.get(i).show();
+  }
 }
 public void keyPressed()
 {
@@ -54,6 +70,10 @@ public void keyPressed()
     if (key=='f')
     {
       ship.hyperspace();
+    }
+    if (key=='e')
+    {
+      shoot.add(new Bullet(ship));
     }
   }
 
